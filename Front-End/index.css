@@ -1,6 +1,7 @@
 html, body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .container {
@@ -9,30 +10,132 @@ html, body{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: #13293D;
 }
 
 .menuBar{
     display: flex;
     background-color: #13293D;
-    padding: 10px 30px;
+    width: 100%;
+    
 }
 
 .topBar{
+    top: 0px;
     justify-content: space-between;
 }
 
 .bottomBar{
+    bottom: 0px;
     justify-content: space-around;
+    align-content: center;
 
 }
 
-h1 {
-    color: #006494;
+.user{
+    flex-grow: 1;
+}
+
+.topIcons{
+    width: 45px;
+    height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+.next-picture{
+
+    translate: 100% -100%;
+    width: 50%;
+    height: 100%;
+}
+
+.last-picture{
+    translate: 0px -200%;
+    width: 50%;
+    height: 100%;
+}
+
+.activeImage{
+    opacity: 100;
+}
+
+.nameTag{
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    margin: 10px;
+    width: 100%;
+}
+
+.pictureBar{
+    top: 8.4%;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: absolute;
+    scale: 0.95;
     
+
 }
 
-h1:hover{
-    color: #FA8334;
-    cursor: pointer;
+.barEl{
+    background-color: #13293D;
+    height: 8px;
+    border-radius: 14px;
+    flex-grow: 1;
+    margin-left: 2px;
+    margin-right: 2px;
+    box-shadow: 1px 1px 3px black;
 }
+
+.actBarEl{
+    background-color: #F76F15;
+}
+
+.loadBarEl{
+    background-color: #006494;
+}
+
+
+.tags{
+
+}
+
+h1{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: #E8F1F2;
+    text-shadow: 4px 4px 3px black;
+
+}
+
+
+svg {
+    padding: 10px;
+    width: 65px;
+    height: 65px;
+    fill: #006494;
+    align-self: center;
+    transition: scale 0.5s, fill 0.5s;
+}
+
+.selectedButton{
+    fill: #F76F15;
+    cursor: pointer;
+    scale: 1.3;
+}
+
+
+
+
+
