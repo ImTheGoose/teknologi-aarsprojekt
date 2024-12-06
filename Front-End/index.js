@@ -17,50 +17,60 @@ const amount = 6;
 
 let activeImgNum = 0
 let imageBarEl = []
-let imageElements = []
+let imageEl = []
+let activeImageEl;
 const images = ["./testImages/img-1.jpg","./testImages/img-2.jpg","./testImages/img-3.jpg","./testImages/img-4.jpg","./testImages/img-5.jpg","./testImages/img-6.jpg"]
 
 
+//Event Listeners for switching picture
+rightButtonEl.addEventListener("click", function(){ updateImgNum(1) })
+leftButtonEl.addEventListener("click", function(){ updateImgNum(-1) })
 
-rightButtonEl.addEventListener("click", function(){
-    updateImgNum(1)
-})
-leftButtonEl.addEventListener("click", function(){
-    updateImgNum(-1)
-})
 
-function loadImage(index){
-    let newEl = document.createElement("img")
-    newEl.src = images[index]
-    imageElements[index] = newEl
-}
-
-//fkn skyd mig sikkert smth med at id asigner ikke fungere. Løsningen er at give dem alle et id og logge det forrige id.
-
-function updateImage(number){
-    document.getElementById("currentImage").remove()
-    imageElements[number].id = "currentImage"
-    imgContainer.append(imageElements[number])
-    imageElements[number].id = ""
-}
-
+//Setup function when loading site
 function setup(){
     loadImageBar()
     let img = imageElements[activeImgNum]
-    img.id = "currentImage"
+
     imgContainer.append(img)
 
 }
 
+
+function loadImage(index){
+    let newEl = document.createElement("img")
+    newEl.src = images[index]
+    imageEl[index] = newEl
+
+}
+
+//The function that loads all tabs in image bar based on amount of pictures
 function loadImageBar(){
     for (let i = 0; i < amount; i++){
         let newEl = document.createElement("div")
         newEl.classList.add("barEl")
+
+        //Assign css styles based on the position compared to the active element
         if (i == activeImgNum){ newEl.classList.add("actBarEl") }
         if (i < activeImgNum){ newEl.classList.add("loadBarEl") }
+
+        //adds image to html element and element list
         pictureBar.append(newEl)
         imageBarEl[i] = newEl
-        loadImage(i)
+    }
+}
+
+//function for updating the image bar.
+function updateImageBar(){
+    for (let i = 0; i < imageBarEl.length; i++){
+        imageBarEl[i].classList = "barEl"
+        if (i < activeImgNum){ 
+            imageBarEl[i].classList.add("loadBarEl")
+         }
+        if (i == activeImgNum){
+            imageBarEl[i].classList.add("actBarEl")
+            console.log("you suck"+i)
+        }
     }
 }
 
@@ -68,19 +78,13 @@ function updateImgNum(index){
     if (activeImgNum === 0 && index < 0) {return}
     if (activeImgNum === amount-1 && index > 0) {return}
 
-    console.log(index)
-    imageBarEl[activeImgNum].classList.remove("actBarEl")
-    if (index > 0){
-        imageBarEl[activeImgNum].classList.add("loadBarEl")
-    }
-
     activeImgNum += index
-    console.log(activeImgNum)
-    imageBarEl[activeImgNum].classList.remove("loadBarEl")
-    imageBarEl[activeImgNum].classList.add("actBarEl")
-    updateImage()
+
+    updateImageBar()
 }
 
+
+//Navbar things--------
 
 profileButtonEl.addEventListener("click", function(){
     navBarPressed(profileButtonEl)
