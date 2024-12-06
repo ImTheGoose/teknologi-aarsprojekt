@@ -30,18 +30,24 @@ leftButtonEl.addEventListener("click", function(){ updateImgNum(-1) })
 //Setup function when loading site
 function setup(){
     loadImageBar()
-    let img = imageElements[activeImgNum]
 
-    imgContainer.append(img)
+    imgContainer.append(imageEl[activeImgNum])
 
 }
 
-
+//Loads the image with the current index
 function loadImage(index){
     let newEl = document.createElement("img")
     newEl.src = images[index]
+    newEl.id = `img-${index}`
     imageEl[index] = newEl
+}
 
+//Changes the image shown from previous to current
+function changeImage(prevNum){
+    let prevEl = document.getElementById(`img-${prevNum}`)
+    prevEl.remove()
+    imgContainer.append(imageEl[activeImgNum])
 }
 
 //The function that loads all tabs in image bar based on amount of pictures
@@ -55,6 +61,7 @@ function loadImageBar(){
         if (i < activeImgNum){ newEl.classList.add("loadBarEl") }
 
         //adds image to html element and element list
+        loadImage(i)
         pictureBar.append(newEl)
         imageBarEl[i] = newEl
     }
@@ -75,12 +82,15 @@ function updateImageBar(){
 }
 
 function updateImgNum(index){
+    let prevNum = activeImgNum
     if (activeImgNum === 0 && index < 0) {return}
     if (activeImgNum === amount-1 && index > 0) {return}
 
     activeImgNum += index
 
     updateImageBar()
+    changeImage(prevNum)
+
 }
 
 
