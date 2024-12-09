@@ -13,44 +13,17 @@ html, body{
     background-color: #13293D;
 }
 
-.menuBar{
-    display: flex;
-    background-color: #13293D;
-    width: 100%;
-    
-}
-
-.topBar{
-    position: fixed;
-    top: 0px;
-    height: 8%;
-    justify-content: space-between;
-}
-
-.bottomBar{
-    position: fixed;
-    height: 10%;
-    bottom: 0px;
-    justify-content: space-around;
-    align-content: center;
-
-}
 
 
 
 .user{
-    margin-top: 20%;
+    margin-top: 8%;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.topIcons{
-    width: 45px;
-    height: 45px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+
 
 
 .profilePic{
@@ -198,20 +171,4 @@ h1{
     color: #E8F1F2;
     margin: auto;
     
-}
-
-
-svg {
-    padding: 10px;
-    width: 65px;
-    height: 65px;
-    fill: #006494;
-    align-self: center;
-    transition: scale 0.5s, fill 0.5s;
-}
-
-.selectedButton{
-    fill: #F76F15;
-    cursor: pointer;
-    scale: 1.3;
 }
