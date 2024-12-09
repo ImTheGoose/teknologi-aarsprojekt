@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <link href="/oswaldFontFixed/stylesheet.css" rel="stylesheet">
     <title>Swipe Side</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="profilPage.css">
 </head>
 <body onload="setup()" class="container">
     <div class="menuBar topBar">
@@ -21,31 +20,76 @@
           
     </div>
     <div class="user">
-        <div style="height: 100%;" id="imgContainer">
-            
+        <div class="underContainer">
+            <img class="profilePic" src="https://thispersondoesnotexist.com" alt="">
+            <h1>Gunnar - 16år</h1>
         </div>
-
-        <div class="next-picture" id="next-picture"></div>
-        <div class="last-picture" id="last-picture"></div>
-
-        <div class="pictureBar" id="pictureBar">
-        </div>
-        <div class="tags">
+        <div class="divide">
 
         </div>
-        <div class="nameTag">
-            <h1>Gunnar - 6år</h1>
+        <div class="intListe">
+            <li>minecraft</li>
+            <li>fortnite</li>
+            <li>Grand theft auto v</li>
+            <li>abe</li>
+            <li>among us</li>
+
+            <div class="addButton">+</div>
         </div>
+        <div class="divide">
+        </div>
+
+        <div class="picList">
+            <div class="postedPic">
+                <img class="postImage" src="https://thispersondoesnotexist.com" alt="">
+                <div class="textBox">
+                    <p class="picTitel">100 kills</p>
+                    <p class="picSubText">Jeg f**king smadrede de skide ass noobs</p>
+                </div>
+                <div class="deleteButton">X</div>
+            </div>
+            <div class="postedPic">
+                <img class="postImage" src="https://thispersondoesnotexist.com" alt="">
+                <div class="textBox">
+                    <p class="picTitel">Hjemløs :D</p>
+                    <p class="picSubText">Drenge sværger jeg blir seriøt hjemløs af priserne i kantinen</p>
+                </div>
+                <div class="deleteButton">X</div>
+            </div>
+            <div class="postedPic">
+                <img class="postImage" src="https://thispersondoesnotexist.com" alt="">
+                <div class="textBox">
+                    <p class="picTitel">Vandt i lotto</p>
+                    <p class="picSubText">Brors vi vandt lige 300k i jysk lotto. #letsgoooo</p>
+                </div>
+                <div class="deleteButton">X</div>
+            </div>
+            <div class="postedPic">
+                <img class="postImage" src="https://thispersondoesnotexist.com" alt="">
+                <div class="textBox">
+                    <p class="picTitel">Gifflar på tilbud?</p>
+                    <p class="picSubText">Skynd jer i netto!! gifflar til 10 kr</p>
+                </div>
+                <div class="deleteButton">X</div>
+            </div>
+        </div>
+
+
+        <div class="saveButton">Gem</div>
+
+        <div style="margin: 15%;"></div>
+
+
 
 
     </div>
 
     <div class="menuBar bottomBar">
-        <svg id="profil-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
+        <svg id="profil-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="selectedButton" fill="currentColor" >
             <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
           </svg>
                  
-        <svg id="home-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 selectedButton">
+        <svg id="home-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 ">
             <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
             <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
         </svg>
@@ -55,6 +99,5 @@
         </svg>
     </div>
     
-    <script src="./index.js"></script>
 </body>
 </html>

@@ -49,46 +49,45 @@ html, body{
 }
 
 img{
-    position: absolute;
-    top: 8%;
-    height: 82%;
+    height: 100vh;
     width: 100%;
 
-
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 14px;
 
 }
 
 .next-picture{
-    position: fixed;
-    top: 8%;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 50%;
-    height: 82%;
+    height: 100vh;
 }
 
 .last-picture{
-    position: fixed;
-    top: 8%;
+    position: absolute;
+    top: 0;
     width: 50%;
-    height: 82%;
+    height: 100vh;
 }
 
 
 .nameTag{
     display: flex;
     position: absolute;
-    bottom: 5%;
+    bottom: -6vh;
     margin: 10px;
     width: 100%;
 }
 
 .pictureBar{
-    top: 8.4%;
+    position: absolute;
+    top: 1vh;
     display: flex;
     width: 100%;
     justify-content: space-around;
-    position: absolute;
+
     scale: 0.95;
     
 

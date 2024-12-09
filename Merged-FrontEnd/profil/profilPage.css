@@ -13,40 +13,18 @@ html, body{
     background-color: #13293D;
 }
 
-.menuBar{
-    display: flex;
-    background-color: #13293D;
-    width: 100%;
-    
-}
 
-.topBar{
-    position: fixed;
-    top: 0px;
-    justify-content: space-between;
-}
 
-.bottomBar{
-    position: fixed;
-    bottom: 0px;
-    justify-content: space-around;
-    align-content: center;
-
-}
 
 .user{
-    margin-top: 20%;
+    margin-top: 8%;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.topIcons{
-    width: 45px;
-    height: 45px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+
+
 
 .profilePic{
     width: 50%;
@@ -159,6 +137,20 @@ li{
 
 }
 
+.saveButton{
+    width: 20%;
+    background-color: #F76F15;
+    color: #E8F1F2;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+}
+
 .divide{
     width: 90%;
     height: 10px;
@@ -178,20 +170,5 @@ h1{
     font-size: 50px;
     color: #E8F1F2;
     margin: auto;
-}
-
-
-svg {
-    padding: 10px;
-    width: 65px;
-    height: 65px;
-    fill: #006494;
-    align-self: center;
-    transition: scale 0.5s, fill 0.5s;
-}
-
-.selectedButton{
-    fill: #F76F15;
-    cursor: pointer;
-    scale: 1.3;
+    
 }
