@@ -1,0 +1,197 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #13293D;
+}
+
+.menuBar{
+    display: flex;
+    background-color: #13293D;
+    width: 100%;
+    
+}
+
+.topBar{
+    position: fixed;
+    top: 0px;
+    justify-content: space-between;
+}
+
+.bottomBar{
+    position: fixed;
+    bottom: 0px;
+    justify-content: space-around;
+    align-content: center;
+
+}
+
+.user{
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.topIcons{
+    width: 45px;
+    height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.profilePic{
+    width: 50%;
+    margin: auto;
+    border-radius: 100%;
+}
+
+.underContainer{
+    display: flex; 
+    flex-direction: column; 
+}
+
+.intListe{
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.picList{
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    margin: 0;
+    color: #E8F1F2;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+}
+
+.picTitel{
+    font-size: 20px;
+    margin: -6px 4px;
+}
+
+
+.picSubText{
+    font-size: 10px;
+    margin: -6px 4px;
+    font-weight: normal;
+    line-height: 9px;
+    opacity: 80%;
+}
+
+.postedPic{
+    background-color: #1988c8;
+    display: flex;
+    width: 100%;
+    border-radius: 13px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.deleteButton{
+    align-self: center;
+    background-color: #F76F15;
+    padding: 9px 11px;
+    border-radius: 8px;
+    color: #E8F1F2;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    scale: 1.8;
+    line-height: 12px;
+}
+
+.textBox{
+    width: 40%;
+    margin-right: 10px;
+}
+
+.postImage{
+    width: 40%;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 4px;
+}
+
+li{
+    list-style-type: none;
+    background-color: #1988c8;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 6px;
+    color: #E8F1F2;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.addButton{
+    list-style-type: none;
+    background-color: #F76F15;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 6px;
+    color: #E8F1F2;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    flex-grow: 1;
+    text-align: center;
+
+
+}
+
+.divide{
+    width: 90%;
+    height: 10px;
+    border-radius: 10px;
+    margin: auto;
+
+    background-color: #006494;
+}
+
+
+
+
+
+h1{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: #E8F1F2;
+    margin: auto;
+}
+
+
+svg {
+    padding: 10px;
+    width: 65px;
+    height: 65px;
+    fill: #006494;
+    align-self: center;
+    transition: scale 0.5s, fill 0.5s;
+}
+
+.selectedButton{
+    fill: #F76F15;
+    cursor: pointer;
+    scale: 1.3;
+}
