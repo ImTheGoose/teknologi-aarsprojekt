@@ -1,0 +1,68 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    background-color: #13293D;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.sender{
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto 0px;
+    width: 90%;
+    height: 11vh;
+    background-color: #006494;
+    border-radius: 10px;
+    overflow: hidden;
+
+    
+}
+
+img{
+    height: 100%;
+    width: 40%;
+    object-fit: cover;
+    
+}
+
+p{
+    margin: 0;
+    color: #E8F1F2;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+}
+
+.senderName{
+    font-size: 30px;
+}
+
+.senderText{
+    margin-top: -4px;
+    font-weight: 200;
+    line-height: 15px;
+    opacity: 70%;
+}
+
+.senderTime{
+    position: absolute;
+    color: #E8F1F2;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    right: 7%;
+    
+}
+
+.textBox{
+    width: 70%;
+    height: 10%;
+    margin-top: -3px;
+    margin-left: 7px;
+}
+

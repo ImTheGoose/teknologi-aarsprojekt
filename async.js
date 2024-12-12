@@ -8,7 +8,8 @@ const asyncStatus = {
             parent:document,
         },
         children:[
-            "profilPage"
+            "profilPage",
+            "messageListPage"
         ]
     },
     startPage:{
@@ -49,6 +50,20 @@ const asyncStatus = {
                 class:"iframe",
                 height:"82%",
                 width:"100%",
+            }
+        }
+    },
+    messageListPage:{
+        priority: 2,
+        loaded: false,
+        iframe:{
+            src:"messageListPage/messagelistPage.html",
+            id:"messageListPage",
+            parent:null,
+            formatting:{
+                class:"iframe",
+                height:"82%",
+                width:"100%"
             }
         }
     }

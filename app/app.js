@@ -13,7 +13,7 @@ profileButtonEl.addEventListener("click", function(){
 })
 
 messageButtonEl.addEventListener("click", function(){
-    navBarPressed(messageButtonEl, "messagePage")
+    navBarPressed(messageButtonEl, "messageListPage")
 })
 homeButtonEl.addEventListener("click", function(){
     navBarPressed(homeButtonEl, "swipePage")
@@ -26,7 +26,7 @@ function navBarPressed(button, pageId){
 
     currentButton.classList.remove("selectedButton")
     document.getElementById("swipePage").style.display = "none"
-    document.getElementById("messagePage").style.display = "none"
+    document.getElementById("messageListPage").style.display = "none"
     document.getElementById("profilPage").style.display = "none"
     currentButton = button
     document.getElementById(pageId).style.display = "block"
