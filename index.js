@@ -1,34 +1,38 @@
-let currentButton = document.getElementById("home-button")
+const loggedIn = false;
+
+function getEl(id){
+    return document.getElementById(id)
+}
 
 
-const profileButtonEl = document.getElementById("profil-button")
-const homeButtonEl = document.getElementById("home-button")
-const messageButtonEl = document.getElementById("message-button")
+function changePage(page){
+    console.log(page)
+    let newPage = null
+    if (page === "loginPage" || 
+        page === "registerPage" || 
+        page === "startPage" || 
+        page === "app")
+        {
+        newPage = getEl(page)
+        console.log(newPage)
+    }else{
+        console.log(`Error: Tried change page with [${page}]`)
+        return;
+    }
+    getEl("startPage").style.display = "none";
+    getEl("loginPage").style.display = "none";
+    getEl("registerPage").style.display = "none";
+    getEl("app").style.display = "none";
+    newPage.style.display = "block";
+    
+    console.log(`Successfully changed to page [${page}]`)
+}
 
-
-//Navbar things--------
-
-profileButtonEl.addEventListener("click", function(){
-    navBarPressed(profileButtonEl, "profilPage")
-})
-
-messageButtonEl.addEventListener("click", function(){
-    navBarPressed(messageButtonEl, "messagePage")
-})
-homeButtonEl.addEventListener("click", function(){
-    navBarPressed(homeButtonEl, "swipePage")
-})
-
-function navBarPressed(button, pageId){
-    console.log(button)
-    if (currentButton === button) {return}
-    console.log(button)
-
-    currentButton.classList.remove("selectedButton")
-    document.getElementById("swipePage").style.display = "none"
-    document.getElementById("messagePage").style.display = "none"
-    document.getElementById("profilPage").style.display = "none"
-    currentButton = button
-    document.getElementById(pageId).style.display = "block"
-    currentButton.classList.add("selectedButton")
+function userLoad(){
+    getEl("loading").style.display = "none"
+    if (!loggedIn){
+        changePage("startPage")
+    }else{
+        changePage("app")
+    }
 }

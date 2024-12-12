@@ -1,0 +1,88 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #13293D;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+img{
+    width: 70%;
+    margin: 10% auto;
+    border-radius: 30px;
+}
+
+h1{
+    margin: 5px auto;
+    color: #E8F1F2;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 15vw;
+}
+
+.inputField{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 5px;
+    height: 40px;
+    width: 85%;
+    margin: 5px auto;
+    border-radius: 8px;
+    background-color: #006494;
+    border-color: #006494;
+    border-style: solid;
+    border-width: 3px;
+    color: #13293D;
+}
+
+.inputField:focus{
+    border-color: #FA8334;
+    outline: none;
+}
+
+.inputField::placeholder{
+    color: #13293D;
+}
+
+.checkBox{
+    width: 25px;
+    border-radius: 10px;
+}
+
+.smallText{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+
+    color: #E8F1F2;
+}
+
+.orangeText{
+    color: #FA8334;
+    margin: 0 5px;
+}
+
+.miniTextContainer{
+    display: flex; 
+    flex-direction: row;
+    margin: 0 7%;
+}
+
+
+.button{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 10% auto 2px;
+    background-color: #006494;
+    color: #E8F1F2;
+    width: 90%;
+    height: 70px;
+    text-align: center;
+    border-radius: 15px;
+}
