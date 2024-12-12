@@ -1,4 +1,5 @@
 const loggedIn = false;
+let waitingFor = null;
 
 function getEl(id){
     return document.getElementById(id)
@@ -19,40 +20,42 @@ function changePage(page){
         console.log(`Error: Tried change page with [${page}]`)
         return;
     }
-    getEl("startPage").style.display = "none";
-    getEl("loginPage").style.display = "none";
-    getEl("registerPage").style.display = "none";
-    if (getEl("app") != null){
-        getEl("app").style.display = "none";
-    }
+    let pages = ["startPage","loginPage","registerPage","app"]
+
+    pages.forEach((id) => {
+        const el = getEl(id)
+        if (el){
+            el.style.display = "none";
+        }
+    })
 
     newPage.style.display = "block";
     
     console.log(`Successfully changed to page [${page}]`)
 }
 
-function appLoaded(){
-    if (loggedIn){
-        getEl("loading").style.display = "none" 
-        changePage("app")
-    }
 
+function waitCheck(obj){
+    if (obj === waitingFor){
+        getEl("loading").style.display = "none"
+        changePage(obj)
+    }
 }
+
+function wait(obj){
+    waitingFor = obj
+    getEl("loading").style.display = "flex"
+}
+
 
 function userLoad(){
-    
     if (!loggedIn){
-        changePage("startPage")
-        getEl("loading").style.display = "none"
+        wait("startPage")
+        window.asyncLoadWave(0)
+
+    }else{
+        waitingFor = "app"
+        window.asyncLoadWave(1)
     }
-    document.body.insertBefore(createAppEl(), document.getElementById("script"))
 }
 
-function createAppEl(){
-    let newEl = document.createElement("iframe")
-    newEl.src = "app/app.html"
-    newEl.id = "app"
-    newEl.frameBorder = 0;
-    newEl.style.display = "none";
-    return newEl;
-}
