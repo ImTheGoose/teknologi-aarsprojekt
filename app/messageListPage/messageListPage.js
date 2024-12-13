@@ -81,8 +81,6 @@ function onLoad(){
     window.parent.parent.asyncLoadComplete('messageListPage')
 }
 
-
-
 function loadSender(obj){
     let object = testUsers[obj]
     let el = document.getElementById("senders")
