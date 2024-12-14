@@ -28,8 +28,8 @@ function setup(){
     loadImageBar()
 
     imgContainer.append(imageEl[activeImgNum])
-
 }
+
 
 //Loads the image with the current index
 function loadImage(index){

@@ -3,9 +3,9 @@
 Listen over ting der forventes at være færdig når dagen er slut.
 
 ### MessagePersonPage
-- design med css
+- design med css //done
 - script til at opsætte beskeder udfra et object (ligesom messageList.js)
-- script til at indtase og tilføje ny besked. (skal addes til objectet, og til html)
+- script til at indtase og tilføje ny besked. (skal addes til objectet, og til html) //done
 
 
 ### Settings
@@ -13,15 +13,19 @@ Listen over ting der forventes at være færdig når dagen er slut.
 - Script som sætter informationen til at passe med et object.
 
 ### Swipe side
-- Designe tags med css
+- Designe tags med css //done
+- Formindske borders af skift billede til kanterne //done
 
 ### Profil side
-- Scripts der indsætter indformationer, tags og billeder fra et object.
-- Design actionmenuer til tilføjelse af billeder og tags.
-- Script actionmenuer så de adder til html og objectet.
+- Scripts der indsætter indformationer, tags og billeder fra et object. //done
+- Design actionmenuer til tilføjelse af billeder og tags. //done
+- Script actionmenuer så de adder til html og objectet. //done
 
 # **Søndag d. 15**
 Såfremt der er noget der mangler fra daværende dag begyndes der med det.
+
+### Profil side
+- Gør så billeder kan blive gemt. Chatten foreslog Cloudinary 
 
 ### Swipe side
 - Implementer en swipe function
@@ -71,4 +75,4 @@ Det forventes at alt nødvendigt at gøre at færdigjort her. Så det er egentli
 :
 
 # Misc
-- 
+- Add text i toppen der indikere hvad du laver. Fx swipe på swipeside eller navn på den du skriver med på messagePersonPage

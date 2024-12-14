@@ -37,9 +37,6 @@ html, body{
 
 }
 
-.user{
-    
-}
 
 .topIcons{
     width: 45px;
@@ -61,14 +58,14 @@ img{
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 22%;
     height: 100vh;
 }
 
 .last-picture{
     position: absolute;
     top: 0;
-    width: 50%;
+    width: 22%;
     height: 100vh;
 }
 
@@ -87,7 +84,6 @@ img{
     display: flex;
     width: 100%;
     justify-content: space-around;
-
     scale: 0.95;
     
 
@@ -111,10 +107,26 @@ img{
     background-color: #006494;
 }
 
+.tag{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #E8F1F2;
+    background-color: #006494;
+    padding: 3px 12px;
+    border-radius: 4px;
 
+}
 
 .tags{
+    position: absolute;
+    top: 3vh;
+    display: flex;
+    width: 100%;
+    gap: 6px;
+    flex-wrap: wrap;
 
+    scale: 0.95;
 }
 
 h1{

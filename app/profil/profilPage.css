@@ -23,6 +23,117 @@ html, body{
     width: 100%;
 }
 
+.inputLabel{
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: #E8F1F2;
+    margin-bottom: -8px;
+    
+}
+
+.addMenu{
+    position: fixed;
+    align-self: center;
+    outline-color: #006494;
+    outline-width: 3px;
+    outline-style: solid;
+    margin-top: 5vh;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: black 0px 0px 40px 10px;
+    backdrop-filter: blur(20px);
+    background-color: rgba(19, 41, 61, 90%);
+    
+}
+
+.fileInput{
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    margin-top: 8px;
+    color: #E8F1F2;
+    background-color: #006494;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.textInput{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 5px;
+    height: 40px;
+    width: 93%;
+    margin: 5px auto;
+    border-radius: 8px;
+    background-color: #006494;
+    border-color: #006494;
+    border-style: solid;
+    border-width: 3px;
+    color: #13293D;
+}
+
+textarea{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 5px;
+    height: 160px;
+    flex-grow: 1;
+    width: 93%;
+    margin: 5px auto;
+    border-radius: 8px;
+    background-color: #006494;
+    border-color: #006494;
+    border-style: solid;
+    border-width: 3px;
+    color: #13293D;
+}
+
+textarea:focus{
+    border-color: #FA8334;
+    outline: none;
+}
+
+textarea::placeholder{
+    color: #13293D;
+}
+
+input:focus{
+    border-color: #FA8334;
+    outline: none;
+}
+
+input::placeholder{
+    color: #13293D;
+}
+
+.addMenuButton{
+    background-color: #F76F15;
+    margin-top: 10px;
+    padding: 2px;
+    border-radius: 6px;
+    color: #E8F1F2;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.closeMenuButton{
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    border-radius: 100%;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    color: #E8F1F2;
+    line-height: 20px;
+    font-size: 30px;
+}
 
 
 
@@ -37,7 +148,7 @@ html, body{
     flex-direction: column; 
 }
 
-.intListe{
+.tagListe{
     width: 90%;
     padding: 10px;
     margin: auto;
@@ -72,6 +183,19 @@ p{
     font-weight: normal;
     line-height: 9px;
     opacity: 80%;
+}
+
+.addPic{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    
+    background-color: #F76F15;
+    color: #E8F1F2;
+    width: 100%;
+    border-radius: 13px;
+
 }
 
 .postedPic{
@@ -138,10 +262,13 @@ li{
 }
 
 .saveButton{
-    width: 20%;
-    background-color: #F76F15;
+    width: 60%;
+    background-color: #13293D;
+    outline: #F76F15;
+    outline-width: 4px;
+    outline-style: solid;
     color: #E8F1F2;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     text-align: center;
     padding: 3px;
     padding-bottom: 5px;
@@ -170,5 +297,6 @@ h1{
     font-size: 50px;
     color: #E8F1F2;
     margin: auto;
+    text-align: center;
     
 }

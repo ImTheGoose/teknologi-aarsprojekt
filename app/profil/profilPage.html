@@ -10,8 +10,10 @@
     <title>Swipe Side</title>
     <link rel="stylesheet" href="profilPage.css">
 </head>
-<body  onload="window.parent.parent.asyncLoadComplete('profilPage')" class="container">
+<body  onload="onLoad()" class="container">
     <div class="user">
+
+
         <div class="underContainer">
             <img class="profilePic" src="https://randomuser.me/api/portraits/women/1.jpg" alt="">
             <h1>Gunnar - 16år</h1>
@@ -19,63 +21,45 @@
         <div class="divide">
 
         </div>
-        <div class="intListe">
-            <li>minecraft</li>
-            <li>fortnite</li>
-            <li>Grand theft auto v</li>
-            <li>abe</li>
-            <li>among us</li>
+        <div id="tagListe" class="tagListe">
 
-            <div class="addButton">+</div>
+            
         </div>
         <div class="divide">
         </div>
 
-        <div class="picList">
-            <div class="postedPic">
-                <img class="postImage" src="https://randomuser.me/api/portraits/women/2.jpg" alt="">
-                <div class="textBox">
-                    <p class="picTitel">100 kills</p>
-                    <p class="picSubText">Jeg f**king smadrede de skide ass noobs</p>
-                </div>
-                <div class="deleteButton">X</div>
-            </div>
-            <div class="postedPic">
-                <img class="postImage" src="https://randomuser.me/api/portraits/women/3.jpg" alt="">
-                <div class="textBox">
-                    <p class="picTitel">Hjemløs :D</p>
-                    <p class="picSubText">Drenge sværger jeg blir seriøt hjemløs af priserne i kantinen</p>
-                </div>
-                <div class="deleteButton">X</div>
-            </div>
-            <div class="postedPic">
-                <img class="postImage" src="https://randomuser.me/api/portraits/women/4.jpg" alt="">
-                <div class="textBox">
-                    <p class="picTitel">Vandt i lotto</p>
-                    <p class="picSubText">Brors vi vandt lige 300k i jysk lotto. #letsgoooo</p>
-                </div>
-                <div class="deleteButton">X</div>
-            </div>
-            <div class="postedPic">
-                <img class="postImage" src="https://randomuser.me/api/portraits/women/5.jpg" alt="">
-                <div class="textBox">
-                    <p class="picTitel">Gifflar på tilbud?</p>
-                    <p class="picSubText">Skynd jer i netto!! gifflar til 10 kr</p>
-                </div>
-                <div class="deleteButton">X</div>
-            </div>
+        <div id="picList" class="picList">
+            
         </div>
 
 
-        <div class="saveButton">Gem</div>
+        <div id="saveButton" class="saveButton" style="display: none;">Gem ændringer</div>
 
+        <div id="addTagMenu" class="addMenu" style="display: none;">
+            <h1>Tilføj et tag</h1>
+            <input class="textInput" type="text" name="newTag" id="newTagInput" maxlength="15">
+            <div id="addTagMenuButton" class="addMenuButton">Tilføj</div>
+            <div id="closeTagMenuButton" class="closeMenuButton">x</div>
+        </div>
+
+        <div id="addPostMenu" class="addMenu" style="display: none;">
+            <h1>Tilføj et post</h1>
+            <div class="inputLabel" >Vælg et billede</div>
+            <input class="fileInput" type="file" id="imageUpload" name="imageUpload" accept=".jpg,.png">
+            <div class="inputLabel">Titel til post</div>
+            <input class="textInput" type="text" name="newTag" id="newPostTitle" maxlength="12">
+            <div class="inputLabel">Beskrivelse til post</div>
+            <textarea name="subText" id="newPostSubText" maxlength="80"></textarea>
+            <div id="addPostMenuButton" class="addMenuButton">Tilføj</div>
+            <div id="closePostMenuButton" class="closeMenuButton">x</div>
+        </div>
 
 
 
 
     </div>
 
-
+    <script src="profilPage.js"></script>
     
 </body>
 </html>

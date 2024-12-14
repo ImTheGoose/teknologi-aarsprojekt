@@ -8,19 +8,97 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <title>Swipe Side</title>
-    <link rel="stylesheet" href="messagePersonPage.html">
+    <link rel="stylesheet" href="messagePersonPage.css">
 </head>
-<body>
-    <div class="messageContainer">
+<body onload="onLoad()">
+    <div id="messageContainer" class="messageContainer">
+        <div class="messageLine">
+            <p class="message fromUser">Hey, har du lavet lektierne?</p>
+        </div>
+        <div class="messageLine">
+            <p class="message">Nej, ikke endnu. Jeg skal snart starte, men jeg har ikke lyst. 😩</p>
+            <p class="message">Hvad med dig?</p>
+        </div>
+        <div class="messageLine">
+            <p class="message fromUser">Jeg har faktisk lige lavet mine matematikopgaver, men det var så kedeligt. 🙄</p>
+            <p class="message fromUser">Jeg føler mig helt tom nu. Skal lave engelsk nu, men det er også så svært!</p>
+        </div>
+        <div class="messageLine">
+            <p class="message">Haha, jeg kender det! Jeg har også matematik og engelsk, men jeg har ikke lavet noget endnu. 😅</p>
+        </div>
+        <div class="messageLine">
+            <p class="message fromUser">Er du klar til prøven i matematik? Jeg er helt ude af den. 😬</p>
+            <p class="message fromUser">Hvad tid har du den?</p>
+        </div>
+        <div class="messageLine">
+            <p class="message">Ja, den er på fredag! Jeg er slet ikke klar. Jeg burde have læst mere, men jeg har været så distraheret!</p>
+            <p class="message">Jeg håber, vi kan få noget tid sammen til at øve.</p>
+        </div>
+        <div class="messageLine">
+            <p class="message fromUser">Totalt enig! Jeg har også brug for at få styr på fysik, og så skal vi skrive den der opgave om Hamlet. 🧐</p>
+            <p class="message fromUser">Jeg har seriøst ikke tid til det hele!</p>
+        </div>
+        <div class="messageLine">
+            <p class="message">Shakespeare er så tungt! Jeg forstår ikke en skid af det! 🙄</p>
+            <p class="message">Jeg burde også snart begynde at læse, men det er svært at finde motivationen.</p>
+        </div>
+        <div class="messageLine">
+            <p class="message fromUser">Skal vi tage en pause og hænge lidt ud? Jeg kan ikke koncentrere mig mere!</p>
+            <p class="message fromUser">Har du tid om en halv time?</p>
+        </div>
+        <div class="messageLine">
+            <p class="message">Jeg er faktisk ret enig. Jeg er helt ude af den. Vi kan tage en pause og komme tilbage senere.</p>
+            <p class="message">Jeg har også virkelig brug for lidt luft! 😅</p>
+        </div>
+        <div class="messageLine">
+            <p class="message fromUser">Okay, lad os tage en pause i 10 minutter. Jeg trænger til at få lidt ro. 🙏</p>
+            <p class="message fromUser">Men vi skal tilbage og få lavet det færdigt senere! </p>
+            <p class="message fromUser">Vi skal virkelig tage det seriøst nu, for det er snart prøver! </p>
+        </div>
+        <div class="messageLine">
+            <p class="message">Ja, vi har ikke lang tid! Jeg håber, det hjælper at få en pause først, så vi kan fokusere bedre efterfølgende.</p>
+            <p class="message">Men vi skal virkelig skynde os!</p>
+        </div>
+        <div class="messageLine">
+            <p class="message fromUser">Er du klar til eksamen? Jeg er lidt nervøs. 😓</p>
+            <p class="message fromUser">Jeg har stadig ikke gennemgået alt. </p>
+        </div>
+        <div class="messageLine">
+            <p class="message">Jeg er også stresset over det. Jeg har slet ikke tid nok til at øve. 😬</p>
+            <p class="message">Men vi må bare komme i gang og gøre vores bedste!</p>
+        </div>
+        <div class="messageLine">
+            <p class="message fromUser">Okay, vi tager en sidste pause nu og så går vi videre. Har du tid til at øve i morgen? 🧠</p>
+        </div>
+        <div class="messageLine">
+            <p class="message">Ja, det er en god idé. Lad os finde tid i morgen!</p>
+            <p class="message">Men nu skal vi lige få styr på den der opgave først. 😓</p>
+        </div>
+        <div class="messageLine">
+            <p class="message fromUser">Ja, vi må bare få det færdigt, så vi kan få lidt frihed efter prøverne. </p>
+            <p class="message fromUser">Men jeg glæder mig til at få det overstået! </p>
+            <p class="message fromUser">Vi klarer det! 💪</p>
+        </div>
+        <div class="messageLine">
+            <p class="message">100%! Vi skal bare fokusere, så det hele bliver lettere. 😅</p>
+            <p class="message">Jeg er sikker på, vi kommer igennem det!</p>
+        </div>
         
+        <div id="bottomSpacer" class="bottomSpacer">
 
+        </div>
+        
     </div>
 
-    <div class="messageBar">
-
+    <div class="messageBarBackdrop">
+        <div class="messageBar">
+            <input type="text" name="newMessage" id="newMessage" placeholder="besked...">
+            <svg id="sendButton" class="sendIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
+              </svg>          
+        </div>
     </div>
 
-
-
+    <script src="messagePersonPage.js"></script>
 </body>
 </html>
