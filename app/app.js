@@ -10,14 +10,21 @@ const messageButtonEl = document.getElementById("message-button")
 
 profileButtonEl.addEventListener("click", function(){
     navBarPressed(profileButtonEl, "profilPage")
+    updateStatusText("Profil")
 })
 
 messageButtonEl.addEventListener("click", function(){
     navBarPressed(messageButtonEl, "messageListPage")
+    updateStatusText("Beskeder")
 })
 homeButtonEl.addEventListener("click", function(){
     navBarPressed(homeButtonEl, "swipePage")
+    updateStatusText("Swipe")
 })
+
+function updateStatusText(text){
+    document.getElementById("statusText").innerHTML = text;
+}
 
 function navBarPressed(button, pageId){
     console.log(button)

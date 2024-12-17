@@ -44,7 +44,13 @@ html, body{
 }
 
 
-
+.statusText{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #E8F1F2;
+    margin: auto;
+}
 
 
 
