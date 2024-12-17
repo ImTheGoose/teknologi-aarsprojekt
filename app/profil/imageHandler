@@ -1,0 +1,16 @@
+
+async function uploadToCloudinary(file) {
+    const url = `https://api.cloudinary.com/v1_1/<your-cloud-name>/upload`;
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "<your-upload-preset>");
+
+    const response = await fetch(url, {
+        method: "POST",
+        body: formData,
+    });
+    const data = await response.json();
+    console.log(data); // Contains the link to the compressed image
+    return data.secure_url; // Use this URL in your app
+}

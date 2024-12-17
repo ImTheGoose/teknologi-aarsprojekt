@@ -87,10 +87,12 @@ function addNewPost(){
     let newPostSubText = document.getElementById("newPostSubText")
 
     let newObject = {
-        img: newPostImg.value,
+        img: uploadedPicPath,
         title: newPostTitle.value,
         subText: newPostSubText.value,
     }
+
+    console.log(newObject)
 
     if (newObject.img === null  || newObject.img === "") { return; }
     if (newObject.title === null || newObject.title === "") { return; }
@@ -103,8 +105,21 @@ function addNewPost(){
     newPostSubText = ""
 
     viewPostMenu(false)
-
 }
+
+let uploadedPic;
+let uploadedPicPath;
+const imageInput = document.getElementById("imageUpload")
+
+imageInput.addEventListener("change", async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        console.log("Image uploaded to:", event.target.files[0]);
+        uploadedPic = event.target.files[0]
+        uploadedPicPath = URL.createObjectURL(uploadedPic); 
+
+    }
+});
 
 function addTagEl(tag){
     let newEl = document.createElement("li")
