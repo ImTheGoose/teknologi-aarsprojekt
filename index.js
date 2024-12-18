@@ -1,4 +1,4 @@
-const loggedIn = true;
+const loggedIn = false;
 let waitingFor = null;
 
 function getEl(id){

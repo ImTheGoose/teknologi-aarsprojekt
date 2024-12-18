@@ -1,3 +1,10 @@
+import { getRef, getRefValues, uploadToDB } from "../../firebaseDB.js"
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"; 
+import { getDatabase } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+
+
 let profilData = {
     postedPics: [{
         img: "https://randomuser.me/api/portraits/women/2.jpg",
@@ -137,16 +144,39 @@ function cacheChange(path, value){
     console.log(profilData)
 }
 
-function onLoad(){
+async function getProfile(){
+    const profilRef = await getRef("profile")
+    const newData = await getRefValues(profilRef)
+    profilData = newData;
+    if (!profilData.tags) { profilData.tags = {} }
+    if (!profilData.postedPics) { profilData.postedPics = {} }
+    console.log(profilData)
+
     loadTags()
     loadPosts()
-
-
-    window.parent.parent.asyncLoadComplete('profilPage')
 }
 
+
+onAuthStateChanged(getAuth(), (user) => {
+    if (user){
+        console.log(user)
+
+        loadProfile()
+    }
+
+})
+
+function loadProfile(){
+    getProfile()
+}
+
+window.addEventListener('load', () => {
+    window.parent.parent.asyncLoadComplete('profilPage')
+})
+
+
+
 function removeTag(object){
-    let index = profilData.tags.indexOf(object.innerHTML)
     cacheChange(cache.tags.removed, object.innerHTML)
     object.remove()
 }
@@ -157,6 +187,7 @@ function loadTags(){
 
     tagListe.innerHTML = `<div id="addTagButton" class="addButton">+</div>`
     document.getElementById("addTagButton").addEventListener("click", function(){ viewTagMenu(true) })
+
     for (let i = 0; i < tags.length; i++){
         addTagEl(tags[i])
     }
@@ -168,8 +199,8 @@ function loadPosts(){
 
     picList.innerHTML = `<div id="addPostButton" class="addPic">Tilføj et post</div>`
     document.getElementById("addPostButton").addEventListener("click", function(){ viewPostMenu(true) })
-    for (let i = 0; i < postedPics.length; i++){
-        addPostEl(i, false)
+    for (const key in postedPics){
+        addPostEl(key, false)
     }
 }
 
@@ -182,8 +213,8 @@ function removePost(object){
 
 function addPostEl(index, inCache){
     let picList = document.getElementById("picList")
-    let info = profilData.postedPics[index]
-    if (inCache) { info = cache.postedPics.added[index] }
+    let info;
+    if (inCache) { info = cache.postedPics.added[index] } else { info = profilData.postedPics[index] }
 
     let newEl = document.createElement("div")
     newEl.classList = "postedPic"
@@ -205,7 +236,8 @@ function saveChanges(){
     let tRemoved = cache.tags.removed
 
     for (let i = 0; i < pAdded.length; i++) {
-        profilData.postedPics.push(pAdded[i])
+        //profilData.postedPics.push(pAdded[i])
+        profilData.postedPics[Object.keys(profilData.postedPics).length+1] = pAdded[i]
     }
     cache.postedPics.added = []
 
@@ -214,13 +246,11 @@ function saveChanges(){
     }
     cache.postedPics.removed = []
 
-    for (let i = 0; i < profilData.postedPics.length; i++){
-        if (profilData.postedPics[i] === "null"){
-            profilData.postedPics.splice(i, 1)
-            i--
+    for (const keys in profilData.postedPics){
+        if (profilData.postedPics[keys] === "null"){
+            delete profilData.postedPics[keys]
         }
     }
-
     
     for (let i = 0; i < tAdded.length; i++) {
         profilData.tags.push(tAdded[i])
@@ -235,6 +265,11 @@ function saveChanges(){
     cache.tags.removed = []
 
     saveButton.style.display = "none"
+    
+    let saveRef = getRef("profile")
+    uploadToDB(saveRef, profilData)
+
+
     loadTags()
     loadPosts()
     console.log(cache)

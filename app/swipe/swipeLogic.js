@@ -1,3 +1,4 @@
+
 const swipeArea = document.getElementById("swipeZone");
 const swipeParent = swipeArea.parentElement
 
@@ -5,7 +6,7 @@ let startX = 0;
 let isSwiping = false;
 
 swipeArea.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX; // Record the initial touch position
+    startX = e.touches[0].clientX;
     isSwiping = true;
 });
 
@@ -17,8 +18,6 @@ swipeArea.addEventListener("touchmove", (e) => {
     const currentX = e.touches[0].clientX;
     const diffX = currentX - startX;
     swipeParent.style.transform = `translateX(${diffX/4}%) rotate(${diffX/30}deg)`
-    console.log(swipeParent)
-    // Optionally show swipe progress here
 });
 
 swipeArea.addEventListener("touchend", (e) => {
