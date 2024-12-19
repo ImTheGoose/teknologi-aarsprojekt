@@ -74,12 +74,28 @@ const testUsers = {
 };
 
 
-function onLoad(){
+window.addEventListener("load",() =>{
     for (const key in testUsers){
         loadSender(key)
     }
+    messagePersonPage  = document.getElementById("messagePersonPage")
     window.parent.parent.asyncLoadComplete('messageListPage')
+    addUserButton()
+})
+
+function addUserButton(){
+    const test = document.getElementById("user1")
+    test.addEventListener("click", () =>{
+        messagePersonPage.style.display = "block"
+    })
 }
+
+let messagePersonPage
+
+export function hidePersonPage(){
+    messagePersonPage.style.display = "none";
+}
+
 
 function loadSender(obj){
     let object = testUsers[obj]

@@ -30,7 +30,6 @@ function navBarPressed(button, pageId){
     console.log(button)
     if (currentButton === button) {return}
     console.log(button)
-
     currentButton.classList.remove("selectedButton")
     document.getElementById("swipePage").style.display = "none"
     document.getElementById("messageListPage").style.display = "none"

@@ -1,3 +1,5 @@
+import { hidePersonPage } from "../messageListPage/messageListPage.js"
+
 const inputMessage = document.getElementById("newMessage")
 const sendButton = document.getElementById("sendButton")
 const bottomSpacer = document.getElementById("bottomSpacer")
@@ -7,9 +9,9 @@ sendButton.addEventListener("click", function(){
     addMessage(inputMessage.value, true)
 })
 
-function onLoad(){
+window.addEventListener("load",() =>{
     scrollToBottom()
-}
+})
 
 function scrollToBottom(){
     messageContainer.scrollTop = messageContainer.scrollHeight
@@ -17,12 +19,17 @@ function scrollToBottom(){
 
 function test(){
     setTimeout(function() {
-        addMessage("Test me bitch", false)
+        addMessage("Thats cool", false)
     }, 1000);
 }
 
 function addMessage(msg, fromUser){
     if (msg === null || msg === ""){ return; }
+
+    if (msg === "exit" || msg === "ex") {
+        window.parent.body.getElementById("messagePersonPage").style.display = "none";
+        return;
+    }
 
     let newEl = document.createElement("div")
     newEl.classList = "messageLine"
