@@ -1,4 +1,4 @@
-import { getSwipe } from "./swipeBackend.js";
+
 
 
 const rightButtonEl = document.getElementById("next-picture")
@@ -24,95 +24,20 @@ leftButtonEl.addEventListener("click", function(){ updateImgNum(-1) })
 
 
 //Setup function when loading site
-window.addEventListener('load', () =>{
+function setup(){
     loadImageBar()
 
     imgContainer.append(imageEl[activeImgNum])
-})
-
-
-export function createUser(uid,profile){
-    let userEl = document.createElement("div")
-    userEl.id = uid;
-    userEl.className = "swipePerson"
-
-
-    let imgArray = loadImages(profile.postedPics)
-    imgArray.forEach(element => {
-        //måske kan være problem. Mby er det imgArray[element] idk ka ik teste endnu
-        userEl.append(element)
-    });
-
-    let picBarEl = createPicBar(imgArray.length)
-    updatePicBar(picBarEl)
-    userEl.append(picBarEl)
-
-    let tagBarEl = createTagBar(profile.tags)
-    userEl.append(tagBarEl)    
-
-    return userEl;
-}
-
-function createTagBar(tags){
-    let tagBarEl = document.createElement("div")
-    tagBarEl.className = "tags"
-    tagBarEl.id = "tags"
-    for (const keys in tags){
-        let newEl = document.createElement("div")
-        newEl.className = "tag"
-        newEl.innerHTML = tags[keys]
-        tagBarEl.append(newEl)
-    }
-    return tagBarEl
-}
-
-function updatePicBar(barEl){
-    const array = Array.from(barEl.children)
-    for (let i = 0; i < array.length; i++){
-        if (i === activeImgNum) { array[i].className = "barEl actBarEl" }
-        if (i < activeImgNum) { array[i].className = "barEl loadBarEl" }
-        if (i > activeImageEl) { array[i].className = "barEl"}
-    }
-}
-
-function createPicBar(length){
-    let picBarEl = document.createElement("div")
-    picBarEl.className = "pictureBar";
-    picBarEl.id = "pictureBar";
-    for (let i = 0; i < length; i++){
-        let newEl = document.createElement("div")
-        newEl.classList.add("barEl")
-        picBarEl.append(newEl)
-    }
-
-
-    return picBarEl;
-}
-
-function loadImages(postedPics){
-    let loadedImages = []
-    let i = 0;
-    for (const keys in postedPics){
-        let img = loadImage(postedPics[keys], i)
-        loadedImages.push(img)
-        i++
-    }
-
-    return loadedImages;
 }
 
 
-function loadImage(picInfo, id){
-    let newImg = document.createElement("img")
-    newImg.src = picInfo.img;
-    newImg.id = id
-    return newImg;
+//Loads the image with the current index
+function loadImage(index){
+    let newEl = document.createElement("img")
+    newEl.src = images[index]
+    newEl.id = `img-${index}`
+    imageEl[index] = newEl
 }
-
-
-
-//Everything under here is depricated
-
 
 //Changes the image shown from previous to current
 function changeImage(prevNum){
